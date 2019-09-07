@@ -27,6 +27,27 @@
     </dependency>
   </dependencies>
 
+pipeline {
+    agent any
+
+    stages {
+        stage('DEVOPS') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('CLOUD') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('INFRA') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
